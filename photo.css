@@ -16,103 +16,68 @@ header {
   border-radius: 0 0 10px 10px;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-nav a {
-  color: #bbb;
-  margin-left: 1.5rem;
+header a {
   text-decoration: none;
-  transition: 0.3s;
-}
-
-nav a:hover,
-nav a.active {
-  color: #fff;
-}
-
-/* Contact Section */
-.contact-section {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 40px;
-  background: #1c1c1c;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.contact-section h1 {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-}
-
-.contact-section p {
-  text-align: center;
-  color: #aaa;
-  margin-bottom: 40px;
-  font-size: 1rem;
-}
-
-/* Contact Info */
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.contact-info a {
   color: #f5f5f5;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.contact-info a:hover {
-  color: #bbb;
-}
-
-/* Contact Form */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-input,
-textarea {
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #525151;
-  background-color: #1f1f1f;
-  color: #f5f5f5;
-  font-size: 1rem;
-  outline: none;
-  transition: border 0.3s ease;
-}
-
-input:focus,
-textarea:focus {
-  border: 1px solid #888;
-}
-
-button {
+  font-weight: 500;
   background-color: transparent;
   border: 1px solid #525151;
-  padding: 12px;
-  color: #f5f5f5;
+  padding: 10px 25px;
   border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-button:hover {
+header a:hover {
   background-color: #525151;
   color: #121212;
+}
+
+/* Gallery Layout */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 60px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 20px;
+}
+
+.gallery-item:hover .overlay,
+.gallery-item:active .overlay {
+  opacity: 1;
 }
 
 /* Footer */
@@ -123,19 +88,15 @@ footer {
   font-size: 13px;
 }
 
+/* Responsive Layout */
 @media (max-width: 768px) {
-  .contact-section {
-    margin: 30px 20px;
-    padding: 30px;
+  .gallery {
+    padding: 30px 20px;
+    gap: 15px;
   }
 
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav a {
-    margin: 10px;
-    display: inline-block;
+  .overlay {
+    font-size: 16px;
+    padding: 15px;
   }
 }
