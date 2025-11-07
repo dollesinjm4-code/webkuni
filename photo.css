@@ -33,54 +33,89 @@ nav a.active {
   color: #fff;
 }
 
-/* Gallery Section */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  padding: 60px;
-}
-
-.gallery-item {
-  position: relative;
-  overflow: hidden;
+/* Contact Section */
+.contact-section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #1c1c1c;
   border-radius: 12px;
-  cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.08);
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+.contact-section h1 {
   text-align: center;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 20px;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
 }
 
-.gallery-item:hover .overlay,
-.gallery-item:active .overlay {
-  opacity: 1;
+.contact-section p {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 40px;
+  font-size: 1rem;
 }
 
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-info a {
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #bbb;
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+textarea {
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #525151;
+  background-color: #1f1f1f;
+  color: #f5f5f5;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid #888;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid #525151;
+  padding: 12px;
+  color: #f5f5f5;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #525151;
+  color: #121212;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 40px 0;
@@ -89,9 +124,9 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .gallery {
-    padding: 30px 20px;
-    gap: 15px;
+  .contact-section {
+    margin: 30px 20px;
+    padding: 30px;
   }
 
   header {
